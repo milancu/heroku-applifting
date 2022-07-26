@@ -1,0 +1,13 @@
+{% for book in books %}
+{{ book.id }}: {{ book.name }} <a href="/books/delete/{{book.id}}">Delete</a><br />
+{% else %}
+No books.
+{% endfor %}
+<br />
+<br />
+<form action="/books" method="post" accept-charset="utf-8" enctype="application/x-www-form-urlencoded">
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text" value="" autofocus/>
+
+    <input type="submit" value="Add"/>
+</form>
