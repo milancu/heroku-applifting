@@ -14,7 +14,7 @@ async def on_startup(app):
 
     if backend == 'databases.backends.postgres:PostgresBackend':
         query = """CREATE TABLE IF NOT EXISTS books (id SERIAL, name VARCHAR(100))"""
-    elif backend == 'databases.backends.sqlite:SQLiteBackend':
+    elif backend == 'databases.backends.sqlite:SQLiteBackend':  
         query = """CREATE TABLE IF NOT EXISTS books (id INTEGER PRIMARY KEY, name VARCHAR(100))"""
     else:
         raise Exception(f'Unknown database backend {backend}')
